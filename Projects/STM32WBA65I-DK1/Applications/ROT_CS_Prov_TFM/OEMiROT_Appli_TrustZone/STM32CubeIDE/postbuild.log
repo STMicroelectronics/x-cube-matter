@@ -1,0 +1,70 @@
+ 
+ 
+Postbuild "" image 
+ 
+Postbuild "nonsecure" image 
+Creating nonsecure image  
+Fri Feb 27 15:38:55 2026 : [INF] ############## Executing xmlval command ##############
+Fri Feb 27 15:38:55 2026 : [INF] AppliCfg.py xmlval -v oemirot_tz_ns_app.bin --string -n Firmware binary input file OEMiROT_NS_Code_Image.xml --vb
+Fri Feb 27 15:38:55 2026 : [INF] Value to be used ..\..\..\Applications\ROT_CS_Prov_TFM\OEMiROT_Appli_TrustZone\Binary\oemirot_tz_ns_app.bin
+Fri Feb 27 15:38:55 2026 : [INF] Opening the 'OEMiROT_NS_Code_Image.xml' file
+Fri Feb 27 15:38:55 2026 : [INF] Searching the parameter with <Name>Firmware binary input file</Name> element
+Fri Feb 27 15:38:55 2026 : [INF] Parameter found. Verifying information of '<Value>..\..\..\Applications\ROT_CS_Prov_TFM\OEMiROT_Appli_TrustZone\Binary\oemirot_tz_ns_app.bin</Value>'
+Fri Feb 27 15:38:55 2026 : [INF] The modification is not necessary
+Fri Feb 27 15:38:55 2026 : [INF] The tag <Value> has already the correct content (..\..\..\Applications\ROT_CS_Prov_TFM\OEMiROT_Appli_TrustZone\Binary\oemirot_tz_ns_app.bin)
+Fri Feb 27 15:38:55 2026 : [INF] ############## Executing xmlval command ##############
+Fri Feb 27 15:38:55 2026 : [INF] AppliCfg.py xmlval -v oemirot_tz_ns_app_enc_sign.bin --string -n Image output file OEMiROT_NS_Code_Image.xml --vb
+Fri Feb 27 15:38:55 2026 : [INF] Value to be used ..\..\..\Applications\ROT_CS_Prov_TFM\OEMiROT_Appli_TrustZone\Binary\oemirot_tz_ns_app_enc_sign.bin
+Fri Feb 27 15:38:55 2026 : [INF] Opening the 'OEMiROT_NS_Code_Image.xml' file
+Fri Feb 27 15:38:55 2026 : [INF] Searching the parameter with <Name>Image output file</Name> element
+Fri Feb 27 15:38:55 2026 : [INF] Parameter found. Verifying information of '<Value>..\..\..\Applications\ROT_CS_Prov_TFM\OEMiROT_Appli_TrustZone\Binary\oemirot_tz_ns_app_enc_sign.bin</Value>'
+Fri Feb 27 15:38:55 2026 : [INF] The modification is not necessary
+Fri Feb 27 15:38:55 2026 : [INF] The tag <Value> has already the correct content (..\..\..\Applications\ROT_CS_Prov_TFM\OEMiROT_Appli_TrustZone\Binary\oemirot_tz_ns_app_enc_sign.bin)
+      -------------------------------------------------------------------
+                       STM32 Trusted Package Creator v2.20.0                  
+      -------------------------------------------------------------------
+
+-pb C:\STM32WB-Matter-BLE-Thread\STM32WB-Matter-BLE-Thread\Projects\STM32WBA65I-DK1\ROT_Provisioning_CS_Prov_TFM\OEMiROT\Images\OEMiROT_NS_Code_Image.xml 
+ 
+Image generated successfully 
+
+Fri Feb 27 15:38:58 2026 : [INF] ############## Executing xmlval command ##############
+Fri Feb 27 15:38:58 2026 : [INF] AppliCfg.py xmlval -v oemirot_tz_ns_app.bin --string -n Firmware binary input file OEMiROT_NS_Code_Init_Image.xml --vb
+Fri Feb 27 15:38:58 2026 : [INF] Value to be used ..\..\..\Applications\ROT_CS_Prov_TFM\OEMiROT_Appli_TrustZone\Binary\oemirot_tz_ns_app.bin
+Fri Feb 27 15:38:58 2026 : [INF] Opening the 'OEMiROT_NS_Code_Init_Image.xml' file
+Fri Feb 27 15:38:58 2026 : [INF] Searching the parameter with <Name>Firmware binary input file</Name> element
+Fri Feb 27 15:38:58 2026 : [INF] Parameter found. Verifying information of '<Value>..\..\..\Applications\ROT_CS_Prov_TFM\OEMiROT_Appli_TrustZone\Binary\oemirot_tz_ns_app.bin</Value>'
+Fri Feb 27 15:38:58 2026 : [INF] The modification is not necessary
+Fri Feb 27 15:38:58 2026 : [INF] The tag <Value> has already the correct content (..\..\..\Applications\ROT_CS_Prov_TFM\OEMiROT_Appli_TrustZone\Binary\oemirot_tz_ns_app.bin)
+Fri Feb 27 15:38:58 2026 : [INF] ############## Executing xmlval command ##############
+Fri Feb 27 15:38:58 2026 : [INF] AppliCfg.py xmlval -v oemirot_tz_ns_app_init_sign.bin --string -n Image output file OEMiROT_NS_Code_Init_Image.xml --vb
+Fri Feb 27 15:38:58 2026 : [INF] Value to be used ..\..\..\Applications\ROT_CS_Prov_TFM\OEMiROT_Appli_TrustZone\Binary\oemirot_tz_ns_app_init_sign.bin
+Fri Feb 27 15:38:58 2026 : [INF] Opening the 'OEMiROT_NS_Code_Init_Image.xml' file
+Fri Feb 27 15:38:58 2026 : [INF] Searching the parameter with <Name>Image output file</Name> element
+Fri Feb 27 15:38:58 2026 : [INF] Parameter found. Verifying information of '<Value>..\..\..\Applications\ROT_CS_Prov_TFM\OEMiROT_Appli_TrustZone\Binary\oemirot_tz_ns_app_init_sign.bin</Value>'
+Fri Feb 27 15:38:58 2026 : [INF] The modification is not necessary
+Fri Feb 27 15:38:58 2026 : [INF] The tag <Value> has already the correct content (..\..\..\Applications\ROT_CS_Prov_TFM\OEMiROT_Appli_TrustZone\Binary\oemirot_tz_ns_app_init_sign.bin)
+      -------------------------------------------------------------------
+                       STM32 Trusted Package Creator v2.20.0                  
+      -------------------------------------------------------------------
+
+-pb C:\STM32WB-Matter-BLE-Thread\STM32WB-Matter-BLE-Thread\Projects\STM32WBA65I-DK1\ROT_Provisioning_CS_Prov_TFM\OEMiROT\Images\OEMiROT_NS_Code_Init_Image.xml 
+ 
+Image generated successfully 
+
+Fri Feb 27 15:39:00 2026 : [INF] ############## Executing xmlval command ##############
+Fri Feb 27 15:39:00 2026 : [INF] AppliCfg.py xmlval -v ns_data_enc_sign.bin --string -n Image output file OEMiROT_NS_Data_Image.xml --vb
+Fri Feb 27 15:39:00 2026 : [INF] Value to be used ..\Binarys_data_enc_sign.bin
+Fri Feb 27 15:39:00 2026 : [INF] Opening the 'OEMiROT_NS_Data_Image.xml' file
+Fri Feb 27 15:39:00 2026 : [INF] Searching the parameter with <Name>Image output file</Name> element
+Fri Feb 27 15:39:00 2026 : [INF] Parameter found. Verifying information of '<Value>..\Binarys_data_enc_sign.bin</Value>'
+Fri Feb 27 15:39:00 2026 : [INF] The modification is not necessary
+Fri Feb 27 15:39:00 2026 : [INF] The tag <Value> has already the correct content (..\Binarys_data_enc_sign.bin)
+Fri Feb 27 15:39:01 2026 : [INF] ############## Executing xmlval command ##############
+Fri Feb 27 15:39:01 2026 : [INF] AppliCfg.py xmlval -v ns_data_init_sign.bin --string -n Image output file OEMiROT_NS_Data_Init_Image.xml --vb
+Fri Feb 27 15:39:01 2026 : [INF] Value to be used ..\Binarys_data_init_sign.bin
+Fri Feb 27 15:39:01 2026 : [INF] Opening the 'OEMiROT_NS_Data_Init_Image.xml' file
+Fri Feb 27 15:39:01 2026 : [INF] Searching the parameter with <Name>Image output file</Name> element
+Fri Feb 27 15:39:01 2026 : [INF] Parameter found. Verifying information of '<Value>..\Binarys_data_init_sign.bin</Value>'
+Fri Feb 27 15:39:01 2026 : [INF] The modification is not necessary
+Fri Feb 27 15:39:01 2026 : [INF] The tag <Value> has already the correct content (..\Binarys_data_init_sign.bin)

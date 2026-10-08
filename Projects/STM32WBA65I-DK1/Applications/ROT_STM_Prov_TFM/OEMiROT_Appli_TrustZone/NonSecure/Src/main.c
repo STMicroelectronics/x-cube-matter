@@ -1,0 +1,290 @@
+/**
+ ******************************************************************************
+ * @file    main.c
+ * @author  MCD Application Team
+ * @brief   Main application file.
+ *          This application demonstrates Firmware Update, protections
+ *          and crypto testing functionalities.
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2024 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
+
+/* Includes ------------------------------------------------------------------*/
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <string.h>
+//#include "com.h"
+#include "main.h"
+#include "common.h"
+#include "appli_region_defs.h"
+#include "secure_nsc.h"
+#include "Driver_Flash.h"
+#include "stm32_factorydata.h"
+#include "stm32wba65i_discovery_conf.h"
+
+#include "cmsis_compiler.h"
+
+/** @addtogroup USER_APP User App Example
+ * @{
+ */
+
+/** @addtogroup USER_APP_COMMON Common
+ * @{
+ */
+
+/* Private includes ----------------------------------------------------------*/
+
+/* Private typedef -----------------------------------------------------------*/
+
+/* Private define ------------------------------------------------------------*/
+#define UART_MSG_SIZE 16
+#define START_PROVISIONING "\nStart_provisioning\n"
+/* Private macro -------------------------------------------------------------*/
+
+/* Private variables ---------------------------------------------------------*/
+UART_HandleTypeDef huart1;
+
+/* Private function prototypes -----------------------------------------------*/
+static void SystemClock_Config(void);
+static void MX_USART1_UART_Init(void);
+
+#define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+
+/* Callbacks prototypes */
+void Error_Handler(void);
+
+/**
+ * @brief  Retargets the C library printf function to the USART.
+ */
+PUTCHAR_PROTOTYPE {
+	//COM_Transmit((uint8_t*) &ch, 1, 1000);
+	return ch;
+}
+
+int _write(int fd, char *str, int len) {
+	int i;
+
+	for (i = 0; i < len; i++) {
+		/* Send byte to USART */
+		__io_putchar(str[i]);
+	}
+
+	/* Return the number of characters written */
+	return len;
+}
+
+/* Private user code ---------------------------------------------------------*/
+
+__WEAK int32_t tfm_ns_platform_init(void) {
+	//stdio_init();
+
+	return ARM_DRIVER_OK;
+}
+
+/**
+ * @brief  The application entry point.
+ * @retval int
+ */
+int main(int argc, char **argv) {
+
+	uint8_t error = 0;
+	uint8_t msg[UART_MSG_SIZE];
+	uint8_t msg_receive[UART_MSG_SIZE];
+	HAL_StatusTypeDef status = 0;
+
+	HAL_Init();
+
+	/* DeInitialize RCC to allow PLL reconfiguration when configuring system clock */
+	HAL_RCC_DeInit();
+
+	/* Configure the system clock */
+	SystemClock_Config();
+
+	if (tfm_ns_platform_init() != ARM_DRIVER_OK) {
+		/* Avoid undefined behavior if platform init failed */
+		while (1)
+			;
+	}
+
+	MX_USART1_UART_Init();
+	status = HAL_UART_Receive(&huart1, msg_receive, 5, 0xFFFF);
+	if (status != HAL_OK) {
+		Error_Handler();
+	}
+	status = HAL_UART_Transmit(&huart1, (uint8_t*) START_PROVISIONING,
+			sizeof(START_PROVISIONING), 0xFFFF);
+	if (status != HAL_OK) {
+		Error_Handler();
+	}
+	error = FACTORYDATA_Write();
+
+	snprintf((char*) msg, sizeof(msg), "finish:%03u\n", error);
+	/* Infinite loop */
+	while (1) {
+
+		status = HAL_UART_Transmit(&huart1, msg, sizeof(msg), 0xFFFF);
+		if (status != HAL_OK) {
+			Error_Handler();
+		}
+		HAL_Delay(3000);
+	}
+}
+
+/**
+ * @brief USART1 Initialization Function
+ * @param None
+ * @retval None
+ */
+static void MX_USART1_UART_Init(void) {
+
+	/* USER CODE BEGIN USART1_Init 0 */
+
+	/* USER CODE END USART1_Init 0 */
+
+	/* USER CODE BEGIN USART1_Init 1 */
+
+	/* USER CODE END USART1_Init 1 */
+	huart1.Instance = USART1;
+	huart1.Init.BaudRate = 115200;
+	huart1.Init.WordLength = UART_WORDLENGTH_8B;
+	huart1.Init.StopBits = UART_STOPBITS_1;
+	huart1.Init.Parity = UART_PARITY_NONE;
+	huart1.Init.Mode = UART_MODE_TX_RX;
+	huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+	huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+	huart1.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+	huart1.Init.ClockPrescaler = UART_PRESCALER_DIV1;
+	huart1.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+	if (HAL_UART_Init(&huart1) != HAL_OK) {
+		Error_Handler();
+	}
+	if (HAL_UARTEx_SetTxFifoThreshold(&huart1, UART_TXFIFO_THRESHOLD_1_8)
+			!= HAL_OK) {
+		Error_Handler();
+	}
+	if (HAL_UARTEx_SetRxFifoThreshold(&huart1, UART_RXFIFO_THRESHOLD_1_8)
+			!= HAL_OK) {
+		Error_Handler();
+	}
+	if (HAL_UARTEx_DisableFifoMode(&huart1) != HAL_OK) {
+		Error_Handler();
+	}
+
+}
+
+/**
+ * @brief  Callback called by secure code following a secure fault interrupt
+ * @note   This callback is called by secure code thanks to the registration
+ *         done by the non-secure application with non-secure callable API
+ *         SECURE_RegisterCallback(SECURE_FAULT_CB_ID, (void *)SecureFault_Callback);
+ * @retval None
+ */
+void SecureFault_Callback(void) {
+	/* Go to error infinite loop when Secure fault generated by IDAU/SAU check */
+	/* because of illegal access */
+	Error_Handler();
+}
+
+/**
+ * @brief  Callback called by secure code following a GTZC TZIC secure interrupt (GTZC_IRQn)
+ * @note   This callback is called by secure code thanks to the registration
+ *         done by the non-secure application with non-secure callable API
+ *         SECURE_RegisterCallback(GTZC_ERROR_CB_ID, (void *)SecureError_Callback);
+ * @retval None
+ */
+void SecureError_Callback(void) {
+	/* Go to error infinite loop when Secure error generated by GTZC check */
+	/* because of illegal access */
+	Error_Handler();
+}
+
+/**
+ * @brief  This function is executed in case of error occurrence.
+ * @retval None
+ */
+void Error_Handler(void) {
+	NVIC_SystemReset();
+}
+
+/**
+ * @brief  System Clock Configuration
+ *         The system Clock is configured as follows :
+ *            System Clock source            = PLL (HSI)
+ *            SYSCLK(Hz)                     = 100000000
+ *            HCLK(Hz)                       = 100000000
+ *            AHB Prescaler                  = 1
+ *            AHB5 Prescaler                 = 4
+ *            APB1 Prescaler                 = 1
+ *            APB2 Prescaler                 = 1
+ *            APB7 Prescaler                 = 1
+ *            HSI Frequency(Hz)              = 16000000
+ *            PLL_M                          = 2
+ *            PLL_N                          = 25
+ *            PLL_P                          = 2
+ *            PLL_Q                          = 2
+ *            PLL_R                          = 2
+ *            Flash Latency(WS)              = 3
+ *            Voltage range                  = 1
+ * @retval None
+ */
+void SystemClock_Config(void) {
+	RCC_OscInitTypeDef RCC_OscInitStruct = { 0 };
+	RCC_ClkInitTypeDef RCC_ClkInitStruct = { 0 };
+
+	__HAL_RCC_PWR_CLK_ENABLE();
+	/** At reset, the regulator is the LDO, in range 2
+	 Need to move to range 1 to reach 100 MHz
+	 */
+	if (HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1)
+			!= HAL_OK) {
+		/* Initialization error */
+		Error_Handler();
+	}
+
+	/** Activate PLL with HSI as source
+	 */
+	RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+	RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+	RCC_OscInitStruct.PLL1.PLLState = RCC_PLL_ON;
+	RCC_OscInitStruct.PLL1.PLLSource = RCC_PLLSOURCE_HSI;
+	RCC_OscInitStruct.PLL1.PLLFractional = 0U;
+	RCC_OscInitStruct.PLL1.PLLM = 2U;
+	RCC_OscInitStruct.PLL1.PLLN = 25U; /* VCO = HSI/M * N = 16 / 2 * 25 = 200 MHz */
+	RCC_OscInitStruct.PLL1.PLLR = 2U; /* PLLSYS = 200 MHz / 2 = 100 MHz */
+	RCC_OscInitStruct.PLL1.PLLP = 2U;
+	RCC_OscInitStruct.PLL1.PLLQ = 2U;
+	if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
+		/* Initialization error */
+		Error_Handler();
+	}
+
+	/** Select PLL as system clock source and configure the HCLK, PCLK1, PCLK2 and PCLK7
+	 clocks dividers
+	 */
+	RCC_ClkInitStruct.ClockType = (RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_HCLK
+			| RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2 | RCC_CLOCKTYPE_PCLK7
+			| RCC_CLOCKTYPE_HCLK5);
+	RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+	RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+	RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+	RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+	RCC_ClkInitStruct.APB7CLKDivider = RCC_HCLK_DIV1;
+	RCC_ClkInitStruct.AHB5_PLL1_CLKDivider = RCC_SYSCLK_PLL1_DIV4;
+	RCC_ClkInitStruct.AHB5_HSEHSI_CLKDivider = RCC_SYSCLK_HSEHSI_DIV1;
+
+	if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK) {
+		/* Initialization error */
+		Error_Handler();
+	}
+}
+

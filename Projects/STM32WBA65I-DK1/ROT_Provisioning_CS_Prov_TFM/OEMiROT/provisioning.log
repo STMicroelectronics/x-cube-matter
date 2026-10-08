@@ -1,0 +1,67 @@
+      -------------------------------------------------------------------
+                       STM32 Trusted Package Creator v2.20.0                  
+      -------------------------------------------------------------------
+
+-obk C:\STM32WB-Matter-BLE-Thread\STM32WB-Matter-BLE-Thread\Projects\STM32WBA65I-DK1\ROT_Provisioning_CS_Prov_TFM\OEMiROT\Config\OEMiRoT_Config.xml 
+ 
+SUCCESS OBKey File Generation 
+
+      -------------------------------------------------------------------
+                       STM32CubeProgrammer v2.20.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 003600503333511731363730
+ST-LINK FW  : V3J16M8
+Board       : STM32WBA65I-DK1
+Voltage     : 3.27V
+SWD freq    : 8000 KHz
+Connect mode: Under Reset
+Reset mode  : Hardware reset
+Device ID   : 0x4B0
+Revision ID : Rev Z
+Device name : STM32WBA6
+Flash size  : 2 MBytes
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+Hard reset is performed
+
+Lock RDP2 password successfully done
+      -------------------------------------------------------------------
+                       STM32CubeProgrammer v2.20.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 003600503333511731363730
+ST-LINK FW  : V3J16M8
+Board       : STM32WBA65I-DK1
+Voltage     : 3.27V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x4B0
+Revision ID : Rev Z
+Device name : STM32WBA6
+Flash size  : 2 MBytes
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 48 Bytes
+
+北北北北北北北北北北北北北北北北北北北北北北北北北 0%圹圹圹圹圹圹圹圹圹圹圹圹圹圹圹圹圹圹圹圹圹圹圹圹圹 100%
+
+
+PROGRAMMING OPTION BYTES AREA ...
+Warning: Option Byte: rdp, value: 0xAA, was not modified.
+
+Warning: Option Bytes are unchanged, Data won't be downloaded
+Time elapsed during option Bytes configuration: 00:00:00.004

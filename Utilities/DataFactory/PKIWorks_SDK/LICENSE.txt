@@ -1,0 +1,74 @@
+ARRIS TECHNOLOGY INC SOFTWARE LICENSE TERMS AND CONDITIONS
+
+These license terms are an agreement between ARRIS Technology, Inc. (“CommScope”) or one of its affiliates. And you or the entity you represent (“you” or “your”).
+
+BY USING THIS APPLICATION SOFTWARE (THE “APPLICATION”), YOU AGREE TO THE TERMS AND CONDITIONS BELOW.  IF YOU DO NOT AGREE, DO NOT USE THIS APPLICATION. 
+You represent to us that you are lawfully able to enter into contracts (e.g., you are not a minor). If you are entering into this agreement for an entity, 
+such as the company you work for, you represent to us that you have legal authority to bind that entity. 
+
+1.	OWNERSHIP RIGHTS AND LICENSE GRANT: CommScope owns all rights, title, and interest to this Application, and you are granted a limited right to use ,
+ reproduce and distribute this Application in binary form only for the Limited Purpose. 
+“Limited Purpose” shall mean to execute solely and exclusively on or in combination with a microcontroller or microprocessor device manufactured 
+by or for STMicroelectronics.  You may redistribute this Application to your developers, partners, customers or distributors, and any such redistribution
+ must be accompanied by this license terms and conditions, except when the Application is distributed by you as embedded into microcontroller or microprocessor
+ device manufactured by or for STMicrolectronics.SDKs included in the Application may only be used in conjunction with CommScope PKI provisioning and security service platforms. 
+
+2.	GENERAL RESTRICTIONS: You agree that you will not, and will not permit any third party to
+ (a) modify, copy, create a derivative work, or otherwise reproduce this Application in whole or in part except for the Limited Purpose;
+ (b) reverse engineer, decompile, disassemble, or otherwise attempt to derive the source code form or structure of the code used in the Application; 
+ or (c) remove any proprietary notices or labels displayed in the Application. You shall treat any materials, including but not limited to human user 
+ and software client credentials, data type IDs, account IDs, and hardware tokens, given to you by CommScope to the for the purpose of using any CommScope services
+ or processing any data obtained from any CommScope services as confidential materials, and take necessary measures to prevent them from being disclosed 
+ or transferred to any unauthorized party, whether independently or as part of a package. CommScope shall not be liable for any damage caused by any disclosure 
+ or transfer of such materials to any unauthorized party.  Test materials (including, but not limited to, keys and certificates) provided by any CommScope service 
+ and/or obtained through the use of any CommScope SDK or client are intended exclusively for testing and evaluation purposes. Such materials shall not be distributed
+ to any unauthorized individuals or entities and shall not be used in any production environment. CommScope expressly disclaims any and all liability for the misuse 
+ or unauthorized use of these test materials, including, without limitation, their use in production systems.
+
+3.	EXPORT RESTRICTIONS. You must comply with all domestic and international export laws and regulations that apply to this Application,
+which include restrictions on destinations, end users, and end use. 
+
+4.	SUPPORT SERVICES. CommScope is not obligated under this agreement to provide any support services for this Application. 
+Any support provided is “as is”, “with all faults”, and without warranty of any kind.
+
+5.	UPDATES. CommScope may periodically update this Application. You may obtain updates only from CommScope or CommScope-authorized sources. 
+Updates may not include or support all existing software features, services, or peripheral devices.
+
+6.	TERMINATION. Without prejudice to any other rights, CommScope may terminate this agreement if you fail to comply with any of its terms or conditions. 
+In such event, you must destroy all copies of this Application and all its component parts.
+
+7.	ENTIRE AGREEMENT. This agreement, and any other terms CommScope may provide for supplements, updates, or third-party applications, is the entire agreement for this Application.
+ 
+8.  APPLICABLE LAW AND PLACE TO RESOLVE DISPUTES. This license will be governed by the internal laws of the State of North Carolina, including the Uniform Commercial Code
+ as adopted in the State of North Carolina, without regard to conflict of laws principles. The United Nations Convention on Contracts for the International Sale of Goods
+ will not apply.  
+   
+9. DISCLAIMER OF WARRANTY. THIS APPLICATION IS LICENSED “AS IS.” YOU BEAR THE RISK OF USING IT. COMMSCOPE GIVES NO EXPRESS WARRANTIES, GUARANTEES, OR CONDITIONS. 
+TO THE EXTENT PERMITTED UNDER APPLICABLE LAWS, COMMSCOPE EXCLUDES ALL IMPLIED WARRANTIES, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+ AND NON-INFRINGEMENT. You are responsible to testing and using the Application in accordance with its intended use and applications. 
+ 
+10. LIMITATION ON AND EXCLUSION OF DAMAGES. IF YOU HAVE ANY BASIS FOR RECOVERING DAMAGES DESPITE THE PRECEDING DISCLAIMER OF WARRANTY, 
+YOU CAN RECOVER FROM COMMSCOPE AND ITS SUPPLIERS ONLY DIRECT DAMAGES UP TO U.S. $5.00. YOU CANNOT RECOVER ANY OTHER DAMAGES, 
+INCLUDING CONSEQUENTIAL, LOST PROFITS, SPECIAL, INDIRECT, OR INCIDENTAL DAMAGES. 
+This limitation applies to 
+(a) anything related to the software, services, content (including code) on third party Internet sites,or third-party applications; 
+and (b) claims for breach of contract, warranty, guarantee, or condition; 
+ strict liability, negligence, or other tort; or any other claim; in each case to the extent permitted by applicable law.
+ It also applies even if CommScope knew or should have known about the possibility of the damages. The above limitation 
+ or exclusion may not apply to you because your state, province, or country may not allow the exclusion or limitation of incidental, consequential,
+ or other damages.
+ 
+11.	EXCLUDED LICENSE. You will not subject this Application in whole or in part to any of the terms of an Excluded License. 
+“Excluded License” means any license that requires (as a condition of use, modification and/or distribution of this Application) such Application
+ or other software combined and/or distributed with such Application to be 
+ (a) disclosed or distributed in source code form; 
+ (b) licensed for the purpose of making derivative works; 
+ or (c) redistributable at no charge. Loadable Kernel Modules are subject to the GPA, as derivatives of the Linux Kernel, and are considered licensed under an Excluded License. 
+
+12.	THIRD PARTY COMPONENTS. The software may include third party components with separate legal notices or governed by other agreement,
+ as may be described withing the software or in the Third Party Notices file(s) accompanying the software. You shall not directly access 
+ or use any third party components independent of the software unless you obtains appropriate licenses. Under certain circumstances, 
+ CommScope may advise that you need to obtain a license for other third-party components for use in conjunction with the CommScope software. 
+ You agree that the terms and conditions agreed to between you and such third-party software vendor, including but not limited to warranties, 
+ indemnification, and support, shall be solely between you and the third-party software vendor, and CommScope shall not have any responsibility 
+ or liability for such third-party components or related royalties or fees arising from your use of the same.

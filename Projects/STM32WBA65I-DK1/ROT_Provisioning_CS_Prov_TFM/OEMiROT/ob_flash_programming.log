@@ -1,0 +1,624 @@
+
+C:\STM32WB-Matter-BLE-Thread\STM32WB-Matter-BLE-Thread\Projects\STM32WBA65I-DK1\ROT_Provisioning_CS_Prov_TFM\OEMiROT>call ../env.bat 
+Set TZEN = 1
+      -------------------------------------------------------------------
+                       STM32CubeProgrammer v2.20.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 003600503333511731363730
+ST-LINK FW  : V3J16M8
+Board       : STM32WBA65I-DK1
+Voltage     : 3.27V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x4B0
+Revision ID : Rev Z
+Device name : STM32WBA6
+Flash size  : 2 MBytes
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 48 Bytes
+
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 0%€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€ 100%
+
+
+PROGRAMMING OPTION BYTES AREA ...
+Warning: Option Byte: tzen, value: 0x1, was not modified.
+
+Warning: Option Bytes are unchanged, Data won't be downloaded
+Time elapsed during option Bytes configuration: 00:00:00.002
+Remove hdp protection
+      -------------------------------------------------------------------
+                       STM32CubeProgrammer v2.20.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 003600503333511731363730
+ST-LINK FW  : V3J16M8
+Board       : STM32WBA65I-DK1
+Voltage     : 3.28V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x4B0
+Revision ID : Rev Z
+Device name : STM32WBA6
+Flash size  : 2 MBytes
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 48 Bytes
+
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 0%€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€ 100%
+
+
+PROGRAMMING OPTION BYTES AREA ...
+Warning: Option Byte: hdp1_pend, value: 0x0, was not modified.
+Warning: Option Byte: hdp1en, value: 0x0, was not modified.
+Warning: Option Byte: hdp2_pend, value: 0x0, was not modified.
+Warning: Option Byte: hdp2en, value: 0x0, was not modified.
+
+Warning: Option Bytes are unchanged, Data won't be downloaded
+Time elapsed during option Bytes configuration: 00:00:00.002
+Remove bank1 protection : -ob SECWM1_PSTRT=0x7F SECWM1_PEND=0 WRP1A_PSTRT=0x7F WRP1A_PEND=0 WRP1B_PSTRT=0x7F WRP1B_PEND=0 SRAM2_RST=0
+      -------------------------------------------------------------------
+                       STM32CubeProgrammer v2.20.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 003600503333511731363730
+ST-LINK FW  : V3J16M8
+Board       : STM32WBA65I-DK1
+Voltage     : 3.27V
+SWD freq    : 8000 KHz
+Connect mode: Under Reset
+Reset mode  : Hardware reset
+Device ID   : 0x4B0
+Revision ID : Rev Z
+Device name : STM32WBA6
+Flash size  : 2 MBytes
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 48 Bytes
+
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 0%€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€ 100%
+
+
+PROGRAMMING OPTION BYTES AREA ...
+Warning: Option Byte: sram2_rst, value: 0x0, was not modified.
+Warning: Option Byte: wrp1a_pend, value: 0x0, was not modified.
+Warning: Option Byte: wrp1a_pstrt, value: 0x7F, was not modified.
+Warning: Option Byte: wrp1b_pend, value: 0x0, was not modified.
+Warning: Option Byte: wrp1b_pstrt, value: 0x7F, was not modified.
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 48 Bytes
+
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+
+
+
+Reconnecting...
+Reconnected !
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 48 Bytes
+
+ 50%±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 0%€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€ 100%
+
+OPTION BYTE PROGRAMMING VERIFICATION:
+
+Option Bytes successfully programmed
+Time elapsed during option Bytes configuration: 00:00:07.582
+Remove bank2 protection : -ob SECWM2_PSTRT=0x7F SECWM2_PEND=0 WRP2A_PSTRT=0x7F WRP2A_PEND=0 WRP2B_PSTRT=0x7F WRP2B_PEND=0
+      -------------------------------------------------------------------
+                       STM32CubeProgrammer v2.20.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 003600503333511731363730
+ST-LINK FW  : V3J16M8
+Board       : STM32WBA65I-DK1
+Voltage     : 3.27V
+SWD freq    : 8000 KHz
+Connect mode: Under Reset
+Reset mode  : Hardware reset
+Device ID   : 0x4B0
+Revision ID : Rev Z
+Device name : STM32WBA6
+Flash size  : 2 MBytes
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 48 Bytes
+
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 0%€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€ 100%
+
+
+PROGRAMMING OPTION BYTES AREA ...
+Warning: Option Byte: secwm2_pend, value: 0x0, was not modified.
+Warning: Option Byte: secwm2_pstrt, value: 0x7F, was not modified.
+Warning: Option Byte: wrp2a_pend, value: 0x0, was not modified.
+Warning: Option Byte: wrp2a_pstrt, value: 0x7F, was not modified.
+Warning: Option Byte: wrp2b_pend, value: 0x0, was not modified.
+Warning: Option Byte: wrp2b_pstrt, value: 0x7F, was not modified.
+
+Warning: Option Bytes are unchanged, Data won't be downloaded
+Time elapsed during option Bytes configuration: 00:00:00.003
+Erase all
+      -------------------------------------------------------------------
+                       STM32CubeProgrammer v2.20.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 003600503333511731363730
+ST-LINK FW  : V3J16M8
+Board       : STM32WBA65I-DK1
+Voltage     : 3.27V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x4B0
+Revision ID : Rev Z
+Device name : STM32WBA6
+Flash size  : 2 MBytes
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+Mass erase ... 
+
+Mass erase successfully achieved
+Remove Boot lock
+      -------------------------------------------------------------------
+                       STM32CubeProgrammer v2.20.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 003600503333511731363730
+ST-LINK FW  : V3J16M8
+Board       : STM32WBA65I-DK1
+Voltage     : 3.27V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x4B0
+Revision ID : Rev Z
+Device name : STM32WBA6
+Flash size  : 2 MBytes
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 48 Bytes
+
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 0%€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€ 100%
+
+
+PROGRAMMING OPTION BYTES AREA ...
+Warning: Option Byte: boot_lock, value: 0x0, was not modified.
+
+Warning: Option Bytes are unchanged, Data won't be downloaded
+Time elapsed during option Bytes configuration: 00:00:00.003
+Set boot address @0x1800C0
+      -------------------------------------------------------------------
+                       STM32CubeProgrammer v2.20.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 003600503333511731363730
+ST-LINK FW  : V3J16M8
+Board       : STM32WBA65I-DK1
+Voltage     : 3.27V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x4B0
+Revision ID : Rev Z
+Device name : STM32WBA6
+Flash size  : 2 MBytes
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 48 Bytes
+
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 0%€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€ 100%
+
+
+PROGRAMMING OPTION BYTES AREA ...
+Warning: Option Byte: secbootadd0, value: 0x1800C0, was not modified.
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 48 Bytes
+
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+
+
+
+Reconnecting...
+Reconnected !
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 48 Bytes
+
+ 50%±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 0%€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€ 100%
+
+OPTION BYTE PROGRAMMING VERIFICATION:
+
+Option Bytes successfully programmed
+Time elapsed during option Bytes configuration: 00:00:07.593
+"Application images programming in download slots"
+Set boot address @0x1800C0
+      -------------------------------------------------------------------
+                       STM32CubeProgrammer v2.20.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 003600503333511731363730
+ST-LINK FW  : V3J16M8
+Board       : STM32WBA65I-DK1
+Voltage     : 3.27V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x4B0
+Revision ID : Rev Z
+Device name : STM32WBA6
+Flash size  : 2 MBytes
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+
+Opening and parsing file: tfm_s_otp.bin
+
+
+Memory Programming ...
+  File          : tfm_s_otp.bin
+  Size          : 384.00 B 
+  Address       : 0x0C018000
+
+
+Download in Progress:
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 0%€€  4%€€  8%€€ 12%€€ 16%€€ 20%€€ 25%€€ 29%€€ 33%€€ 37%€€ 41%€€ 45%€€€ 50%€€ 54%€€ 58%€€ 62%€€ 66%€€ 70%€€ 75%€€ 79%€€ 83%€€ 87%€€ 91%€€ 95%€€€ 100%
+
+File download complete
+Time elapsed during download operation: 00:00:00.050
+
+
+
+Verifying...
+
+
+Read progress:
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 50%€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€ 100%
+
+Time elapsed during verifying operation: 00:00:00.009
+
+
+Download verified successfully 
+
+
+"TZ OTP NV Written"
+Set boot address @0x1800C0
+      -------------------------------------------------------------------
+                       STM32CubeProgrammer v2.20.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 003600503333511731363730
+ST-LINK FW  : V3J16M8
+Board       : STM32WBA65I-DK1
+Voltage     : 3.27V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x4B0
+Revision ID : Rev Z
+Device name : STM32WBA6
+Flash size  : 2 MBytes
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+
+Opening and parsing file: oemirot_tz_s_app_init_sign.bin
+
+
+Memory Programming ...
+  File          : oemirot_tz_s_app_init_sign.bin
+  Size          : 256.00 KB 
+  Address       : 0x0C024000
+
+
+Download in Progress:
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 0%€  2%€  4%€  6%€  8%€ 10%€ 12%€ 14%€ 16%€ 18%€ 20%€ 22%€ 24%€ 26%€ 28%€ 30%€ 32%€ 34%€ 36%€ 38%€ 40%€ 42%€ 44%€ 46%€ 48%€ 50%€ 52%€ 54%€ 56%€ 58%€ 60%€ 62%€ 64%€ 66%€ 68%€ 70%€ 72%€ 74%€ 76%€ 78%€ 80%€ 82%€ 84%€ 86%€ 88%€ 90%€ 92%€ 94%€ 96%€ 98%€ 100%
+
+File download complete
+Time elapsed during download operation: 00:00:16.074
+
+
+
+Verifying...
+
+
+Read progress:
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 50%€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€ 100%
+
+Time elapsed during verifying operation: 00:00:00.670
+
+
+Download verified successfully 
+
+
+"TZ Appli Secure Written"
+Set boot address @0x1800C0
+      -------------------------------------------------------------------
+                       STM32CubeProgrammer v2.20.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 003600503333511731363730
+ST-LINK FW  : V3J16M8
+Board       : STM32WBA65I-DK1
+Voltage     : 3.28V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x4B0
+Revision ID : Rev Z
+Device name : STM32WBA6
+Flash size  : 2 MBytes
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+
+Opening and parsing file: oemirot_tz_ns_app_init_sign.bin
+
+
+Memory Programming ...
+  File          : oemirot_tz_ns_app_init_sign.bin
+  Size          : 1.50 MB 
+  Address       : 0x0C064000
+
+
+Download in Progress:
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 0%€  2%€  4%€  6%€  8%€ 10%€ 12%€ 14%€ 16%€ 18%€ 20%€ 22%€ 24%€ 26%€ 28%€ 30%€ 32%€ 34%€ 36%€ 38%€ 40%€  2%€  4%€  6%€  8%€ 10%€ 12%€ 14%€ 16%€ 18%€ 20%€ 22%€ 24%€ 26%€ 28%€ 30%€ 32%€ 34%€ 36%€ 38%€ 40%€ 42%€ 44%€ 46%€ 48%€ 50%€ 52%€ 54%€ 56%€ 58%
+
+File download complete
+Time elapsed during download operation: 00:01:52.070
+
+
+
+Verifying...
+
+
+Read progress:
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 29%€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€ 100%
+
+Time elapsed during verifying operation: 00:00:03.749
+
+
+Download verified successfully 
+
+
+"TZ Appli NonSecure Written"
+Write Binary Keys
+      -------------------------------------------------------------------
+                       STM32CubeProgrammer v2.20.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 003600503333511731363730
+ST-LINK FW  : V3J16M8
+Board       : STM32WBA65I-DK1
+Voltage     : 3.27V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x4B0
+Revision ID : Rev Z
+Device name : STM32WBA6
+Flash size  : 2 MBytes
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+
+Opening and parsing file: OEMiRoT_Keys.bin
+
+
+Memory Programming ...
+  File          : OEMiRoT_Keys.bin
+  Size          : 256.00 B 
+  Address       : 0x0C004000
+
+
+Download in Progress:
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 0%€€€  6%€€€ 12%€€€ 18%€€€ 25%€€€ 31%€€€ 37%€€€ 43%€€€€ 50%€€€ 56%€€€ 62%€€€ 68%€€€ 75%€€€ 81%€€€ 87%€€€ 93%€€€€ 100%
+
+File download complete
+Time elapsed during download operation: 00:00:00.046
+
+
+
+Verifying...
+
+
+Read progress:
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 50%€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€ 100%
+
+Time elapsed during verifying operation: 00:00:00.010
+
+
+Download verified successfully 
+
+
+"Binary Keys Written"
+Write OEMiROT_Boot
+      -------------------------------------------------------------------
+                       STM32CubeProgrammer v2.20.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 003600503333511731363730
+ST-LINK FW  : V3J16M8
+Board       : STM32WBA65I-DK1
+Voltage     : 3.28V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x4B0
+Revision ID : Rev Z
+Device name : STM32WBA6
+Flash size  : 2 MBytes
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+
+Opening and parsing file: WBA6_OEMiROT_TFM_Boot.bin
+
+
+Memory Programming ...
+  File          : WBA6_OEMiROT_TFM_Boot.bin
+  Size          : 65.27 KB 
+  Address       : 0x0C006000
+
+
+Download in Progress:
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 0%€  2%€  4%€  6%€  8%€ 10%€ 12%€ 14%€ 16%€ 18%€ 20%€ 22%€ 24%€ 26%€ 28%€ 30%€ 32%€ 34%€ 36%€ 38%€ 40%€ 42%€ 44%€ 46%€ 48%€ 50%€ 52%€ 54%€ 56%€ 58%€ 60%€ 62%€ 64%€ 66%€ 68%€ 70%€ 72%€ 74%€ 76%€ 78%€ 80%€ 82%€ 84%€ 86%€ 88%€ 90%€ 92%€ 94%€ 96%€ 98%€ 100%
+
+File download complete
+Time elapsed during download operation: 00:00:04.756
+
+
+
+Verifying...
+
+
+Read progress:
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 50%€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€ 100%
+
+Time elapsed during verifying operation: 00:00:00.178
+
+
+Download verified successfully 
+
+
+"OEMiROT_Boot Written"
+Configure Option Bytes
+"Configure Secure option Bytes: Write Protection, Hide Protection boot lock and Write protection"
+      -------------------------------------------------------------------
+                       STM32CubeProgrammer v2.20.0                  
+      -------------------------------------------------------------------
+
+ST-LINK SN  : 003600503333511731363730
+ST-LINK FW  : V3J16M8
+Board       : STM32WBA65I-DK1
+Voltage     : 3.28V
+SWD freq    : 8000 KHz
+Connect mode: Hot Plug
+Reset mode  : Software reset
+Device ID   : 0x4B0
+Revision ID : Rev Z
+Device name : STM32WBA6
+Flash size  : 2 MBytes
+Device type : MCU
+Device CPU  : Cortex-M33
+BL Version  : --
+Debug in Low Power mode enabled
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 48 Bytes
+
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 0%€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€ 100%
+
+
+PROGRAMMING OPTION BYTES AREA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 48 Bytes
+
+±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+
+
+
+Reconnecting...
+Reconnected !
+
+
+UPLOADING OPTION BYTES DATA ...
+
+  Bank          : 0x00
+  Address       : 0x50022040
+  Size          : 48 Bytes
+
+ 50%±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±± 0%€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€ 100%
+
+OPTION BYTE PROGRAMMING VERIFICATION:
+
+Option Bytes successfully programmed
+Time elapsed during option Bytes configuration: 00:00:07.589
+Programming success

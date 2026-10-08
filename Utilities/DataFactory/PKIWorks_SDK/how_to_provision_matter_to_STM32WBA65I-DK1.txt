@@ -1,0 +1,107 @@
+# How to provision Matter Device Attestation Certificate to STM32WBA65I-DK1 and run Lighting-App Demo
+
+## Overview
+
+ST and CommScope provide pre-integrated solution to provisioning Matter certificates to STM32 devices.
+
+## Requirements
+
+Please read readme.txt to understand the features, requirements and command line arguments for Python script.
+
+You will need to install Python 3 Windows version from the Python web site https://www.python.org/downloads/windows/.
+
+You will also need to install pyserial Python package. From the windows terminal type "pip install pyserial" to install pyserial Python package. You need to install python, before running this command.
+
+In addition, the developer's PC must have internet connection to opus-integ.pki-center.com (Port 2012). 
+
+These instructions assume you are using a Windows 10 or higher version of Windows Operating System.
+
+Also you will need to install the STM32CubeIDE build tool for Windows (64 bit), in order to build the STM32 firmware.  This can be downloaded at https://www.stm.com/en/development-tools/stm32cubeide.html. Download version 1.18.0 or greater.   
+
+You will need the STM32CubeProgrammer tool for Windows (64 bit) to erase the STM32 development board memory.  This can be downloaded from https://www.st.com/en/development-tools/stm32cubeprog.html.  Download version 2.19.0 or greater.  Note: Using the 32 bit version of this tool will cause problems with the python script in step 5.
+
+
+##Usage
+
+Lets assume x-cube-matter package is under C:\
+
+Step #1 Build CS_Provisioning Project
+=====================================
+- If you have not already installed STM32CubeIDE software, do so now.  There is a http link in the requirements section above where the tool can be downloaded. You need STM32CubeIDE to build the STM32 firmware.
+- To install the CS_Provisioning project in STM32CubeIDE, using windows explorer, click on the file called C:\x-cube-matter\Project\STM32WBA65I-DK1\Applications\Matter\CS_Provisioning\STM32CubeIDE\.cproject.
+- In the STM32CubeIDE software, select the CS_Provisioning project, on the left hand side of the tool.  You should see a pop up window indicating that a CS_Provisioning directory has been imported into the STM32CubeIDE too.  Press OK. 
+- Once you have selected the CS_Provisioning project, then you should search for a small icon of hammer.  It is above the Project Explorer tab of the STM32CubeIDE tool.  Press the hammer icon to build the CS_Provisioning project. 
+- CS_Provisioning.bin will be created under Debug folder if build was successful.
+
+
+Step #2 Build Lighting-App Project
+==================================
+- Please set #define CONFIG_STM32_FACTORY_DATA_ENABLE 1 in C:\x-cube-matter\Projects\STM32WBA65I-DK1\Applications\Matter\Lighting-App\Core\Inc\app_conf.h 
+- To install Lighting-App project into the STM32CubeIDE, using windows explorer, click on the file called C:\x-cube-matter\Projects\STM32WBA65I-DK1\Applications\Matter\Lighting-App\STM32CubeIDE\.cproject.
+- In the STM32CubeIDE software, select the Lighting-App project, on the left hand side of the tool.  You should see a pop up window indicating that a lighting-app project has been imported into the STM32CubeIDE tool.  Press OK.
+- Once you have selected the Lighting-App project, then you should search for a small icon of hammer.  It is above the Project Explorer tab of the STM32CubeIDE tool.  Press the hammer icon to build the Lighting-App project.
+- Lighting-App.bin will be created under Debug folder if build was successful.
+
+
+Step #3 Configuration of PKIWorks and Device Configuration Data [NO ACTION TO TAKE, JUST FYI]
+=============================================================================================== 
+- For demo/testing purpose, CommScope and ST provides the configuration files (ats.bin and pkitype.txt) for a test DAC with
+   -- VENDOR_ID = 0xFFF1
+   -- PRODUCT_ID = 0x8020
+
+- For production, 
+    -- Configure device configuration data in Provisioning_FactoryData.json file under i-cube-matter-pkiworks-v1-4-0-2\Utilities\DataFactory. 
+          --- It is important to note that VENDOR_ID and PRODUCT_ID must be the same in Provisioning_FactoryData.json file, CERTIFICATION_DECLARATION and Device Attestation Certificate (DAC). 
+    -- The "CERTIFICATION_DECLARATION" (CD) is delivered by CSA for production.  For testing, you can use the chip-cert tool to generate a test CD:  https://github.com/project-chip/connectedhomeip/tree/354e43d780086dbbfec13b48ffaff06568fdde27/src/tools/chip-cert#gen-cd
+    -- Obtain set of ats.bin and pkitype.txt for production DAC from CommScope. 
+
+
+Step #4 Erase Flash Memory before running Python script in Step #5
+==================================================================
+- Open the STM32CubeProgrammer application.
+- Connect the STM32WBA65I-DK1 board to the Windows PC USB port and connect the other side of cable to ST Link USB connector on board.
+     - Update Firmware version to V3J15M8B551 or higher by click Firmware Upgrade button in ST-Link configuration panel.
+     - Select "Hardware reset" in Reset mode dropdown. 
+- Click on the Connect button on the upper right hand corner of the application, to connect the programmer to board.
+- On left side of programmer application, press the second button from the top (looks like a down arrow button) to select Erasing & Programming screen.
+- In the middle of the Erasing & Programming screen, click on a tab that says "Erase flash memory" 
+- Once the tab has been selected, press on the "full chip erase" button to erase the entire flash memory.  You will be prompted to verify that you want to erase the memory.  Press OK.
+- When erasing is completed, press the disconnect button.  
+- Next reset the board by unplug the board from the ST LINK connector.  Wait 10 seconds, and then plug the board back into the ST Link connector cable.
+
+
+Step #5 Run Python script
+===============================
+- Open command prompt as administrator
+- Change directory to C:\x-cube-matter\Utilities\DataFactory
+- Connect the STM32WBA65I-DK1 board to the ST Link USB connector to the Windows PC
+- Execute the following command to provision test Matter credentials to flash memory. 
+ 
+- python genFactoryData.py --provisioning 1 --json PKIWorks_SDK\CS_Provisioning_FactoryData.json --flashProvisioningFW "C:\x-cube-matter\Project\STM32WBA65I-DK1\Applications\Matter\CS_Provisioning\STM32CubeIDE\Debug\CS_Provisioning.bin" --provisioning_script PKIWorks_SDK\cs_provisioning.py --flashAppFW "C:\x-cube-matter\Projects\STM32WBA65I-DK1\Applications\Matter\Lighting-App\STM32CubeIDE\Debug-Lighting\Lighting-App.bin" --AppFwAddr 0x08000000  --flashAddr 0x81EC000 --security 0
+
+- The provisioning debug information will be displayed in command prompt.
+
+
+Step #6 Verify Lighting-app
+===============================
+- Open HyperTerminal (i.e., Tera Term) and the UART must be configured as follows:
+    - BaudRate = 115200 baud 
+    - Word Length = 8 Bits
+    - Stop Bit = 1 bit
+    - Parity = none
+    - Flow control = none
+- Reset the board (Push black button)
+- The board's LCD shall display "Dimmable Light" and trace will be displayed in terminal.
+
+By the end of Step #6, the device has been successfully provisioned with a CommScope test device attestation certificate (DAC), and sample Ligting-app is running. 
+The device is ready for commissioning, use of the X-CUBE-MATTER-PKIWORKS package has been completed. 
+
+Helpful Tips for Commissioning
+===============================
+You can test with the chip-tool application delivered inside Matter's SDK which can be downloaded from https://github.com/project-chip/connectedhomeip
+
+Build Matter SDK
+cd path/to/connnectedhomeip/out/host/
+./chip-tool pairing ble-thread 0x7283 hex:<thread-dataset> <setup-pin-code> <discriminator> --paa-trust-store-path <paa-certificate-path>**
+
+** The CommScope test PAA certificate is provided in C:\x-cube-matter\Utilities\DataFactory\PKIWorks_SDK folder. 

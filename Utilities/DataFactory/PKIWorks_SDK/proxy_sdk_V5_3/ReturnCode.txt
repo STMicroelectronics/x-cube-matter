@@ -1,0 +1,40 @@
+// PKIWorks Device SDK Returned Values
+#define PKIW_OK                                               0     // OK
+#define PKIW_ERR_ARG_NULL                                0x0040     // Invalid arguments are passed to device SDK.
+#define PKIW_ERR_DEVICE_ID_LEN_INVALID                   0x0042     // Device ID length is larger than 64. 
+#define PKIW_ERR_MALLOC_FAILED                           0x0043     // Device SDK failed to allocate memory.
+#define PKIW_ERR_PAI_LEN_INVALID                         0x0044     // PAI length in the message is larger than 600.
+#define PKIW_ERR_DAC_LEN_INVALID                         0x0045     // DAC length in the message is larger than 600.
+#define PKIW_ERR_MODE_LEN_INVALID                        0x0046     // Provision mode length in the message is larger than 1.
+#define PKIW_ERR_MSG_NOT_RECOG                           0x0047     // Device SDK does not recognize the message send by proxy SDK.
+											             
+#define PKIW_ERR_RANDOM_GEN_FAILED_HAL_ERR               0x0051     // Random number generation failed due to HAL_ERROR
+#define PKIW_ERR_RANDOM_GEN_FAILED_HAL_BUSY              0x0052     // Random number generation failed due to HAL_BUSY
+#define PKIW_ERR_RANDOM_GEN_FAILED_HAL_TIMEOUT           0x0053     // Random number generation failed due to HAL_TIMEOUT
+
+#define PKIW_ERR_EC_POINT_GEN_FAILED_HAL_ERR             0x0061     // EC point computation failed due to HAL_ERROR
+#define PKIW_ERR_EC_POINT_GEN_FAILED_HAL_BUSY            0x0062     // EC point computation failed due to HAL_BUSY
+#define PKIW_ERR_EC_POINT_GEN_FAILED_HAL_TIMEOUT         0x0063     // EC point computation failed due to HAL_TIMEOUT
+
+#define PKIW_ERR_SIGNATURE_GEN_FAILED_HAL_ERR            0x0071     // EC signature computation failed due to HAL_ERROR
+#define PKIW_ERR_SIGNATURE_GEN_FAILED_HAL_BUSY           0x0072     // EC signature computation failed due to HAL_BUSY
+#define PKIW_ERR_SIGNATURE_GEN_FAILED_HAL_TIMEOUT        0x0073     // EC signature computation failed due to HAL_TIMEOUT
+
+#define PKIW_ERR_COMM_REC_FAILED_HAL_ERR                 0x0081     // Failed to receive message due to HAL_ERROR
+#define PKIW_ERR_COMM_REC_FAILED_HAL_BUSY                0x0082     // Failed to receive message due to HAL_BUSY
+#define PKIW_ERR_COMM_REC_FAILED_HAL_TIMEOUT             0x0083     // Failed to receive message due to HAL_TIMEOUT
+
+#define PKIW_ERR_COMM_SEND_FAILED_HAL_ERR                0x0091     // Failed to send message due to HAL_ERROR
+#define PKIW_ERR_COMM_SEND_FAILED_HAL_BUSY               0x0092     // Failed to send message due to HAL_BUSY
+#define PKIW_ERR_COMM_SEND_FAILED_HAL_TIMEOUT            0x0093     // Failed to send message due to HAL_TIMEOUT
+
+// PKIWorks Proxy SDK Returned values
+#define PKIW_ERR_ARG_NULL                                0x1000     // Invalid arguments are passed to proxy SDK.
+#define PKIW_ERR_COMM_INIT                               0x1001     // Failed to establish communication with device.
+#define PKIW_ERR_COMM_REC                                0x1002     // Failed to receive message from device.
+#define PKIW_ERR_COMM_REC_TIMEOUT                        0x1003     // Failed to receive message from device in timely manner.
+#define PKIW_ERR_COMM_SEND                               0x1004     // Failed to send message to device.
+#define PKIW_ERR_COMM_SEND_TIMEOUT                       0x1005     // Failed to send message to device in timely manner.
+										     
+#define PKIW_ERR_INVALID_MSG                             0x1006     // Invalid message received from the device. 
+#define PKIW_ERR_SERVER_ERROR                            0x1007     // Provisioning server failed to process the request.
